@@ -11,11 +11,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Build EXE
-        run: g++ nama-cpp.cpp -o nama-cpp.exe
+        run: g++ nama-cpp.cpp -o nama-cpp.exe -static -static-libgcc -static-libstdc++
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
